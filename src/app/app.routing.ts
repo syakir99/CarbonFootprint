@@ -4,13 +4,15 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { LandingComponent } from './landing/landing/landing.component';
 
 const routes: Routes =[
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'landing',
     pathMatch: 'full',
-  }, {
+  },
+  { path: 'landing',        component: LandingComponent }, {
     path: '',
     component: AdminLayoutComponent,
     children: [{
