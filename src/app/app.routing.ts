@@ -12,18 +12,16 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    component: LandingComponent,
     pathMatch: 'full',
   },
-  { path: 'login',        component: LoginComponent }, {
-    path: '',
-    component: AdminLayoutComponent,
-    children: [{
-      path: '',
-      loadChildren: () => import('./layouts/admin-layout/admin-layout.module').then(m => m.AdminLayoutModule)
-    }]
-  },
-  { path: 'landing',        component: LandingComponent }, {
+  {
+    path: 'login',
+    component: LoginComponent
+  }, 
+  { path: 'login', 
+  component: DashboardComponent }, 
+  {
     path: '',
     component: AdminLayoutComponent,
     children: [{
